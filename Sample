@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+
+import { Freshchat } from 'ngx-freshchat';
+
+@Component({
+
+  selector: 'app-root',
+
+  template: `
+
+    <button (click)="openChat()">Open Chat</button>
+
+  `
+
+})
+
+export class AppComponent {
+
+  constructor(private freshchat: Freshchat) { }
+
+  openChat() {
+
+    this.freshchat.init();
+
+    this.freshchat.show();
+
+  }
+
+}
+
